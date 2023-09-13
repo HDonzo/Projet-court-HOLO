@@ -115,7 +115,7 @@ def calcul_score_et_distance(sequence_dict, blosum_matrix):
             for row in distance_matrix:
                 filout.write(" ".join(map(str, row)) + "\n")
             filout.write("\n")
-        print("sauvegarde okay")
+        print("sauvegarde du fichier reussie")
 
 #embranchement sequentiel
 
@@ -158,7 +158,7 @@ def embranchement_seq(file_distance):
         for i in range(1, nombre_de_clusters + 1):
             cluster_i = [sequence_ids[j] for j in range(len(sequence_ids)) if clusters[j] == i]
             print(f"Cluster {i}: {cluster_i}")
-        #sch.dendrogram(dendrogram) #n'arrive pas a s'afficher
+        #sch.dendrogram(dendrogram) #le dendrogramme ne s'affiche pas
     else:
         print(f"Aucune matrice de distance n'a été lue depuis le fichier {file_distance}.")
    
@@ -191,8 +191,5 @@ print(calcul_score_et_distance(sequence_dict,blosum_matrix))
 #embranchement sequentiel
 file_distance = "distance_liste.txt"
 print(embranchement_seq(file_distance))
-
-#alignement multiple 
-file = "test.fasta"
 
 #le script d'alignement multiple n'a pas pu etre réalisé
